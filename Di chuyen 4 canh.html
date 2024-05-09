@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển 4 cạnh</title>
+</head>
+<body>
+<img src="doremon.jpg" alt="" style="width: 150px;height: 200px; position: absolute; top: 100px; left: 100px" id="dore">
+</body>
+<script>
+    let s = 3;
+    let s1 = 3;
+    setInterval(() => {
+        dore = document.getElementById('dore');
+        dore.style.left = parseInt(dore.style.left) + s + 'px';
+        dore.style.top = parseInt(dore.style.top) + s1 + 'px';
+        if (parseInt(dore.style.left) > window.innerWidth - dore.width) {
+            s = -3;
+        }
+        if (parseInt(dore.style.left) <= 0) {
+            s = 3;
+        }
+        if (parseInt(dore.style.top) > window.innerHeight - dore.height) {
+            s1 = -3;
+        }
+        if (parseInt(dore.style.top) <= 0) {
+            s1 = 3;
+        }
+    }, 1)
+</script>
+</html>

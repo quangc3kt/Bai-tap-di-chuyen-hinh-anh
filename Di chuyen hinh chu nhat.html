@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="doremon.jpg" alt="" style="width: 150px;height: 200px; position: absolute; top: 0px; left: 0px" id="dore">
+</body>
+<script>
+    let s = 3;
+    let move = 'right';
+    setInterval(() => {
+        let dore = document.getElementById('dore');
+        if (move === 'right' && parseInt(dore.style.left) < window.innerWidth - dore.width) {
+            dore.style.left = parseInt(dore.style.left) + s + 'px';
+        } else if (move === 'right') {
+            move = 'down';
+        }
+        if (move === 'down' && parseInt(dore.style.top) < window.innerHeight - dore.height) {
+            dore.style.top = parseInt(dore.style.top) + s + 'px';
+        } else if (move === 'down') {
+            move = 'left';
+        }
+        if (move === 'left' && parseInt(dore.style.left) > 0) {
+            dore.style.left = parseInt(dore.style.left) - s + 'px';
+        } else if (move === 'left') {
+            move = 'up';
+        }
+        if (move === 'up' && parseInt(dore.style.top) > 0) {
+            dore.style.top = parseInt(dore.style.top) - s + 'px';
+        } else if (move === 'up') {
+            move = 'right';
+        }
+
+    }, 1)
+
+</script>
+</html>
